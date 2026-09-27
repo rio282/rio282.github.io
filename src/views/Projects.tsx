@@ -1,7 +1,36 @@
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { FolderGit2 } from "lucide-react"
+import { siIcon, siReact, siTypescript, siVite } from "simple-icons"
+import SkillIcon from "../components/SkillIcon.tsx"
+import portfolioImage from "../assets/projects/portfolio.png"
+
+type Skill = {
+    name: string
+    icon: typeof siIcon
+}
+
+type Project = {
+    name: string
+    skills: Skill[]
+    image: string
+}
+
+const projects: Project[] = [
+    {
+        name: "Portfolio",
+        skills: [
+            { name: "React", icon: siReact },
+            { name: "Vite", icon: siVite },
+            { name: "TypeScript", icon: siTypescript },
+        ],
+        image: portfolioImage,
+    },
+]
 
 export default function Projects() {
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+
     return (
         <main className="flex-1 overflow-auto bg-background">
             <div className="mx-auto max-w-7xl p-10">
@@ -19,7 +48,7 @@ export default function Projects() {
                         Projects
                     </h1>
 
-                    <div className="flex items-center gap-12">
+                    <div className="flex items-start gap-8">
                         <table className="w-full border-collapse text-sm">
                             <thead>
                                 <tr className="border-b border-border text-left text-xs uppercase tracking-wider text-muted-foreground">
@@ -33,46 +62,85 @@ export default function Projects() {
                             </thead>
 
                             <tbody className="divide-y divide-border">
-                                <tr className="transition-colors hover:bg-muted/60">
-                                    <td className="px-4 py-3 font-medium text-foreground">
-                                        The Sliding Mr. Bones (Next Stop,
-                                        Pottersville)
-                                    </td>
-                                    <td className="px-4 py-3 text-muted-foreground">
-                                        Malcolm Lockyer
-                                    </td>
-                                </tr>
+                                {projects.map((project) => {
+                                    const selected =
+                                        selectedProject?.name === project.name
 
-                                <tr className="transition-colors hover:bg-muted/60">
-                                    <td className="px-4 py-3 font-medium text-foreground">
-                                        Witchy Woman
-                                    </td>
-                                    <td className="px-4 py-3 text-muted-foreground">
-                                        The Eagles
-                                    </td>
-                                </tr>
+                                    return (
+                                        <tr
+                                            key={project.name}
+                                            onClick={() =>
+                                                setSelectedProject(
+                                                    selectedProject?.name ===
+                                                        project.name
+                                                        ? null
+                                                        : project
+                                                )
+                                            }
+                                            className={`
+                                                cursor-pointer transition-colors
+                                                ${
+                                                    selected
+                                                        ? "bg-muted"
+                                                        : "hover:bg-muted/60"
+                                                }
+                                            `}
+                                        >
+                                            <td className="px-4 py-3 font-medium text-foreground">
+                                                {project.name}
+                                            </td>
 
-                                <tr className="transition-colors hover:bg-muted/60">
-                                    <td className="px-4 py-3 font-medium text-foreground">
-                                        Shining Star
-                                    </td>
-                                    <td className="px-4 py-3 text-muted-foreground">
-                                        Earth, Wind, and Fire
-                                    </td>
-                                </tr>
+                                            <td className="px-4 py-3">
+                                                <div className="flex items-center gap-2">
+                                                    {project.skills.map(
+                                                        (skill) => (
+                                                            <span
+                                                                key={skill.name}
+                                                                title={
+                                                                    skill.name
+                                                                }
+                                                                className="flex items-center gap-2 rounded-md border border-border bg-background px-2 py-1 text-xs text-muted-foreground"
+                                                            >
+                                                                <SkillIcon
+                                                                    icon={
+                                                                        skill.icon
+                                                                    }
+                                                                />
+                                                                {skill.name}
+                                                            </span>
+                                                        )
+                                                    )}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                })}
                             </tbody>
                         </table>
-                        <motion.div
-                            className="border rounded-sm border-border"
-                            initial={{ opacity: 0, x: 10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4 }}
-                        >
-                            <img
-                                src="https://static.wikia.nocookie.net/hellokitty/images/3/30/Sanrio_Characters_Pompompurin_Image006.png/revision/latest?cb=20170401200050"
-                                alt="pompompurin"
-                            />
-                        </motion.div>
+
+                        {selectedProject && (
+                            <motion.div
+                                key={selectedProject.name}
+                                className="w-96 shrink-0 overflow-hidden rounded-sm border border-border"
+                                initial={{
+                                    opacity: 0,
+                                    x: 10,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    x: 0,
+                                }}
+                                transition={{
+                                    duration: 0.3,
+                                }}
+                            >
+                                <img
+                                    src={selectedProject.image}
+                                    alt={selectedProject.name}
+                                    className="h-auto w-full object-cover select-none pointer-events-none"
+                                />
+                            </motion.div>
+                        )}
                     </div>
                 </motion.div>
             </div>
