@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { FolderGit2 } from "lucide-react"
+import CVNonAnonymizedVer from "../assets/docs/cv.pdf";
 
 export default function CV() {
     return (
@@ -19,7 +20,13 @@ export default function CV() {
                         Curriculum Vitae
                     </h1>
 
-                    <div>@TODO</div>
+                    <div className="mt-8 overflow-hidden rounded-lg border border-border">
+                        <iframe
+                            src={CVNonAnonymizedVer}
+                            title="Curriculum Vitae"
+                            className="h-[900px] w-full"
+                        />
+                    </div>
                 </motion.div>
             </div>
         </main>
