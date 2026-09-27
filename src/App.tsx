@@ -1,11 +1,11 @@
 import Sidebar from "./components/Sidebar"
-import Workspace from "./components/Workspace"
+import Projects from "./views/Projects.tsx"
 
 export default function App() {
     return (
-        <div className="flex h-screen w-screen overflow-hidden bg-[#f7f1df] text-[#3b2b24]">
+        <div className="flex h-screen w-screen overflow-hidden bg-background text-foreground">
             <Sidebar />
-            <Workspace />
+            <Projects />
         </div>
     )
 }

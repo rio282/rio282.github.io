@@ -10,11 +10,11 @@ export default function FileItem({ label, active = false }: Props) {
         <button
             className={`
                 flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left
-                transition-all duration-200
+                transition-all duration-200 cursor-pointer
                 ${
                     active
-                        ? "bg-[#f6d365] text-[#3b2b24]"
-                        : "text-[#6f5a4b] hover:bg-[#e3cf9f]"
+                        ? "bg-primary text-primary-foreground"
+                        : "text-secondary-foreground hover:bg-hover"
                 }
             `}
         >
