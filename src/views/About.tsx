@@ -19,9 +19,7 @@ export default function About() {
                         About
                     </h1>
 
-                    <div>
-                        @TODO
-                    </div>
+                    <div>@TODO</div>
                 </motion.div>
             </div>
         </main>

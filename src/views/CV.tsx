@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { FolderGit2 } from "lucide-react"
-import CVNonAnonymizedVer from "../assets/docs/cv.pdf";
+import CVNonAnonymizedVer from "../assets/docs/cv.pdf"
 
 export default function CV() {
     return (

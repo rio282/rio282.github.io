@@ -19,9 +19,7 @@ export default function Archive() {
                         Archive
                     </h1>
 
-                    <div>
-                        @TODO
-                    </div>
+                    <div>@TODO</div>
                 </motion.div>
             </div>
         </main>
