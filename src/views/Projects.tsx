@@ -62,7 +62,7 @@ export default function Projects() {
                                 </tr>
                             </tbody>
                         </table>
-                        <div className="border">
+                        <div className="border rounded-sm border-border">
                             <img
                                 src="https://static.wikia.nocookie.net/hellokitty/images/3/30/Sanrio_Characters_Pompompurin_Image006.png/revision/latest?cb=20170401200050"
                                 alt="pompompurin"

@@ -10,7 +10,7 @@ export default function FileItem({ label, active = false }: Props) {
         <button
             className={`
                 flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left
-                transition-all duration-200 cursor-pointer
+                transition-all duration-200 cursor-pointer 
                 ${
                     active
                         ? "bg-primary text-primary-foreground"
