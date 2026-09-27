@@ -1,18 +1,19 @@
 import { Folder } from "lucide-react"
+import { NavLink } from "react-router-dom"
 
 type Props = {
     label: string
-    active?: boolean
 }
 
-export default function FileItem({ label, active = false }: Props) {
+export default function FileItem({ label }: Props) {
     return (
-        <button
-            className={`
+        <NavLink
+            to={`/${label}`}
+            className={({ isActive }) => `
                 flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left
-                transition-all duration-200 cursor-pointer 
+                transition-all duration-200 cursor-pointer
                 ${
-                    active
+                    isActive
                         ? "bg-primary text-primary-foreground"
                         : "text-secondary-foreground hover:bg-hover"
                 }
@@ -21,6 +22,6 @@ export default function FileItem({ label, active = false }: Props) {
             <Folder size={16} />
 
             <span className="text-sm">{label}/</span>
-        </button>
+        </NavLink>
     )
 }

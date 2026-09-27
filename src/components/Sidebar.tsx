@@ -30,10 +30,9 @@ export default function Sidebar() {
             </div>
 
             <div className="flex flex-col gap-1 p-3">
-                {items
-                    .map((item) => (
-                        <FileItem key={item} label={item!} active={item === window.location.pathname.split("/").pop()} />
-                    ))}
+                {items.map((item) => (
+                    <FileItem key={item} label={item!} />
+                ))}
             </div>
 
             <div className="mt-auto border-t border-border p-4 text-xs text-muted-foreground">
