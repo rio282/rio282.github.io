@@ -62,12 +62,17 @@ export default function Projects() {
                                 </tr>
                             </tbody>
                         </table>
-                        <div className="border rounded-sm border-border">
+                        <motion.div
+                            className="border rounded-sm border-border"
+                            initial={{ opacity: 0, x: 10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.4 }}
+                        >
                             <img
                                 src="https://static.wikia.nocookie.net/hellokitty/images/3/30/Sanrio_Characters_Pompompurin_Image006.png/revision/latest?cb=20170401200050"
                                 alt="pompompurin"
                             />
-                        </div>
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>
