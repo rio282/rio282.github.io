@@ -298,6 +298,7 @@ export default function Terminal() {
                         <span>~/rio282/</span>
                     </div>
 
+                    {/* TODO: make smaller */}
                     <div
                         ref={terminalRef}
                         onClick={focusTerminal}
@@ -423,6 +424,7 @@ export default function Terminal() {
                         </span>
                     </div>
 
+                    {/* TODO: remove */}
                     {/* command references */}
                     <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
                         {commands
