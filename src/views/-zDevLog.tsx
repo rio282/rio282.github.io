@@ -4,6 +4,7 @@ import { FolderGit2 } from "lucide-react"
 import heartRateWebUiImage from "../assets/img/devlog/heart-rate-web-ui.png"
 import heartRateWebUiWithHandImage from "../assets/img/devlog/heart-rate-web-ui-with-hand.png"
 import heartRateEspWithHandImage from "../assets/img/devlog/heart-rate-esp-with-hand.png"
+import reachyPlainSimImage from "../assets/img/devlog/reachy-sim-plain.png"
 
 type Heading = {
     id: string
@@ -271,6 +272,7 @@ export default function DevLog() {
                                     owner.
                                 </p>
                             </div>
+
                             {/* PulseSensor */}
                             <div className="space-y-4">
                                 <h3 className="text-xl font-semibold text-foreground">
@@ -295,6 +297,7 @@ export default function DevLog() {
                                         src={heartRateEspWithHandImage}
                                         alt="Hand placed on the heart rate sensor connected to the ESP32"
                                         className="h-auto w-full rounded-lg border border-border object-contain"
+                                        loading="lazy"
                                     />
 
                                     <figcaption className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -400,6 +403,7 @@ export default function DevLog() {
                                             src={heartRateWebUiImage}
                                             alt="Heart rate web interface displaying sensor measurements"
                                             className="h-auto w-full rounded-lg border border-border object-contain"
+                                            loading="lazy"
                                         />
                                         <figcaption className="mt-2 text-center text-sm leading-6 text-muted-foreground">
                                             Web interface displaying the pulse
@@ -413,6 +417,7 @@ export default function DevLog() {
                                             src={heartRateWebUiWithHandImage}
                                             alt="Heart rate web interface with a hand placed on the sensor"
                                             className="h-auto w-full rounded-lg border border-border object-contain"
+                                            loading="lazy"
                                         />
                                         <figcaption className="mt-2 text-center text-sm leading-6 text-muted-foreground">
                                             Web interface during a live
@@ -449,6 +454,7 @@ export default function DevLog() {
                                     </li>
                                 </ul>
                             </div>
+
                             {/* Reachy simulation */}
                             <div className="space-y-4">
                                 <h3 className="text-xl font-semibold text-foreground">
@@ -480,6 +486,19 @@ export default function DevLog() {
                                     establishing the basic structure of the
                                     application.
                                 </p>
+
+                                <figure className="mx-auto my-6 max-w-md text-center">
+                                    <img
+                                        src={reachyPlainSimImage}
+                                        alt="Reachy's simulated environment"
+                                        className="h-auto w-full rounded-lg border border-border object-contain"
+                                        loading="lazy"
+                                    />
+
+                                    <figcaption className="mt-3 text-sm leading-6 text-muted-foreground">
+                                        Reachy in his simulated environment.
+                                    </figcaption>
+                                </figure>
 
                                 <h3 className="text-xl font-semibold text-foreground">
                                     Establishing the processing pipeline
