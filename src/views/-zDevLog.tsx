@@ -122,7 +122,7 @@ export default function DevLog() {
                                 Sprint 1 — Orientation, Introduction & Setup
                             </h2>
 
-                            <p className="border-t border-border text-sm text-muted-foreground">
+                            <p className="border-t border-border text-sm text-muted-foreground pt-2">
                                 Last edited:{" "}
                                 {new Date("11 october 2026").toLocaleDateString(
                                     "en-GB",
