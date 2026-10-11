@@ -70,17 +70,7 @@ export default function Terminal() {
                     ...current,
                     {
                         command,
-                        lines: [
-                            "About",
-                            "-----",
-                            "",
-                            "Hi, I'm Rio.",
-                            "",
-                            "I build software, experiment with systems,",
-                            "and explore interesting ideas through code.",
-                            "",
-                            "Navigate to /about for more information.",
-                        ],
+                        lines: ["Opening about..."],
                     },
                 ])
 
@@ -105,6 +95,7 @@ export default function Terminal() {
                     {
                         command,
                         lines: [
+                            "@TODO",
                             "Technical skills",
                             "----------------",
                             "",
@@ -155,6 +146,17 @@ export default function Terminal() {
                         ],
                     },
                 ])
+                break
+
+            case "devlog":
+                setOutputs((current) => [
+                    ...current,
+                    {
+                        command,
+                        lines: ["Opening devlog..."],
+                    },
+                ])
+                navigate("/-zdevlog")
                 break
 
             default:

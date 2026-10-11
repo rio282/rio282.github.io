@@ -6,6 +6,7 @@ import Archive from "./views/Archive"
 import About from "./views/About"
 import CV from "./views/CV"
 import Terminal from "./views/Terminal"
+import DevLog from "./views/-zDevLog.tsx"
 
 export default function App() {
     return (
@@ -18,6 +19,7 @@ export default function App() {
                     <Route path="/archive" element={<Archive />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/cv" element={<CV />} />
+                    <Route path="/-zdevlog" element={<DevLog />} />
                     <Route path="*" element={<Terminal />} />
                 </Routes>
             </main>

@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom"
 import FileItem from "./FileItem"
 import packageJson from "../../package.json"
 import Logo from "../assets/img/pompompurin--black-white.svg"
+import React from "react"
 
 const views = import.meta.glob("../views/*", {
     eager: true,
@@ -56,9 +57,17 @@ export default function Sidebar() {
             </NavLink>
 
             <div className="flex flex-col gap-1 p-3">
-                {items.map((item) => (
-                    <FileItem key={item} label={item!} />
-                ))}
+                {items.map((item) =>
+                    item === "-zdevlog" ? (
+                        <React.Fragment key={item}>
+                            <hr className="opacity-50 my-2" />
+                            <FileItem label={item!} />
+                            {/*<hr className="opacity-50" />*/}
+                        </React.Fragment>
+                    ) : (
+                        <FileItem key={item} label={item!} />
+                    )
+                )}
             </div>
 
             <div className="mt-auto border-t border-border p-4 text-xs text-muted-foreground">
