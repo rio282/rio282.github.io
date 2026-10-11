@@ -8,7 +8,7 @@ type CommandOutput = {
     lines: string[]
 }
 
-const commands = ["help", "about", "projects", "skills", "cv", "ls", "clear"]
+const commands = ["help", "about", "projects", "skills", "cv", "devlog", "ls", "clear"]
 
 const commandDescriptions: Record<string, string> = {
     help: "show available commands",
@@ -16,6 +16,7 @@ const commandDescriptions: Record<string, string> = {
     projects: "open projects",
     skills: "show technical skills",
     cv: "open my CV",
+    devlog: "open my devlog (school assignment)",
     ls: "list available sections",
     clear: "clear the terminal",
 }
@@ -46,6 +47,7 @@ export default function Terminal() {
     function executeCommand(command: string) {
         switch (command) {
             case "help":
+                // TODO: use commandDescriptions
                 setOutputs((current) => [
                     ...current,
                     {
@@ -58,6 +60,7 @@ export default function Terminal() {
                             "  projects   Open projects",
                             "  skills     Show technical skills",
                             "  cv         Open my CV",
+                            "  devlog     Open my devlog (school assignment)",
                             "  ls         List available sections",
                             "  clear      Clear the terminal",
                         ],

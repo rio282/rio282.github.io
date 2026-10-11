@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { FolderGit2 } from "lucide-react"
+import heartRateWebUiImage from "../assets/img/devlog/heart-rate-web-ui.png"
+import heartRateWebUiWithHandImage from "../assets/img/devlog/heart-rate-web-ui-with-hand.png"
+import heartRateEspWithHandImage from "../assets/img/devlog/heart-rate-esp-with-hand.png"
 
 type Heading = {
     id: string
@@ -287,6 +290,20 @@ export default function DevLog() {
                                     further development.
                                 </p>
 
+                                <figure className="mx-auto my-6 max-w-md text-center">
+                                    <img
+                                        src={heartRateEspWithHandImage}
+                                        alt="Hand placed on the heart rate sensor connected to the ESP32"
+                                        className="h-auto w-full rounded-lg border border-border object-contain"
+                                    />
+
+                                    <figcaption className="mt-3 text-sm leading-6 text-muted-foreground">
+                                        My girlfriend wearing the PulseSensor;
+                                        connected to the ESP32 while measuring
+                                        her pulse.
+                                    </figcaption>
+                                </figure>
+
                                 <p className="leading-7 text-muted-foreground">
                                     Once the basic functionality was
                                     established, I moved on to developing a way
@@ -376,6 +393,34 @@ export default function DevLog() {
                                     </code>
                                     .
                                 </p>
+
+                                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                    <figure className="min-w-0">
+                                        <img
+                                            src={heartRateWebUiImage}
+                                            alt="Heart rate web interface displaying sensor measurements"
+                                            className="h-auto w-full rounded-lg border border-border object-contain"
+                                        />
+                                        <figcaption className="mt-2 text-center text-sm leading-6 text-muted-foreground">
+                                            Web interface displaying the pulse
+                                            measurements received from the
+                                            ESP32.
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure className="min-w-0">
+                                        <img
+                                            src={heartRateWebUiWithHandImage}
+                                            alt="Heart rate web interface with a hand placed on the sensor"
+                                            className="h-auto w-full rounded-lg border border-border object-contain"
+                                        />
+                                        <figcaption className="mt-2 text-center text-sm leading-6 text-muted-foreground">
+                                            Web interface during a live
+                                            measurement with my girlfriend's
+                                            hand placed on the PulseSensor.
+                                        </figcaption>
+                                    </figure>
+                                </div>
 
                                 <p className="leading-7 text-muted-foreground">
                                     While I focused on the PulseSensor, another
