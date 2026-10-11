@@ -1,7 +1,7 @@
 {
     "name": "rio282.github.io",
     "private": true,
-    "version": "0.1.7",
+    "version": "0.1.8",
     "homepage": "https://rio282.github.io",
     "type": "module",
     "scripts": {
