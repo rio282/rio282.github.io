@@ -113,7 +113,6 @@ export default function DevLog() {
                         </ol>
                     </nav>
 
-                    {/* Write your DevLog content here */}
                     <article ref={contentRef} className="space-y-12">
                         <section
                             id="sprint-1"
