@@ -73,3 +73,7 @@ button {
     background: #d9a85f;
     border-radius: 999px;
 }
+
+ul {
+    padding-left: 16px;
+}
