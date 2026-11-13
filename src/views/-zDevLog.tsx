@@ -2148,7 +2148,7 @@ export default function DevLog() {
                                         <i>
                                             "Maybe summarise some parts,
                                             especially technical stuff. You
-                                            could just use more images for
+                                            could just use more images for example.3
                                         </i>
                                     </li>
                                 </ul>
