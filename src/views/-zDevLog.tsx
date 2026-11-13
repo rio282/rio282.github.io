@@ -2127,6 +2127,32 @@ export default function DevLog() {
                                     responsibilities within the team.
                                 </p>
                             </div>
+
+                            {/* Feedback */}
+                            <div className="space-y-4">
+                                <h3 className="text-xl font-semibold text-foreground">
+                                    Feedback from Classmates
+                                </h3>
+
+                                <ul className="list-inside list-disc space-y-2 text-muted-foreground">
+                                    <li>
+                                        <i>
+                                            "Remember the learning goals and add
+                                            them into your devlog."
+                                        </i>
+                                    </li>
+                                    <li>
+                                        <i>"Expand on learning goals."</i>
+                                    </li>
+                                    <li>
+                                        <i>
+                                            "Maybe summarise some parts,
+                                            especially technical stuff. You
+                                            could just use more images for
+                                        </i>
+                                    </li>
+                                </ul>
+                            </div>
                         </section>
 
                         <section>
